@@ -4,7 +4,7 @@
   "publisher": "snippkit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yaseen549/snippkit-vscode"
+    "url": "https://github.com/Yaseen549/snippkit-vscode.git"
   },
   "description": "Save snippets to SnippKit",
   "version": "0.0.1",
