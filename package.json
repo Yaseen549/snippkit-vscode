@@ -1,0 +1,76 @@
+{
+  "name": "snippkit-vscode",
+  "displayName": "snippkit-vscode",
+  "publisher": "snippkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaseen549/snippkit-vscode"
+  },
+  "description": "Save snippets to SnippKit",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snippkit.setApiKey",
+        "title": "Snippkit: Set API Key"
+      },
+      {
+        "command": "snippkit.saveSelection",
+        "title": "Snippkit: Save Selected Code"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "snippkit.saveSelection",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Snippkit",
+      "properties": {
+        "snippkit.apiUrl": {
+          "type": "string",
+          "default": "https://snippkit.com/api/s/create",
+          "description": "The API endpoint for creating snippets."
+        },
+        "snippkit.frontendUrl": {
+          "type": "string",
+          "default": "https://snippkit.com",
+          "description": "The base URL for generating shareable links."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
