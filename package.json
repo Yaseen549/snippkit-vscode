@@ -1,6 +1,7 @@
 {
   "name": "snippkit-vscode",
   "displayName": "snippkit-vscode",
+  "icon": "icon.png",
   "publisher": "snippkit",
   "repository": {
     "type": "git",
